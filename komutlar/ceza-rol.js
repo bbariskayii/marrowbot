@@ -31,11 +31,11 @@ exports.run = (client, message, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: true,
-    aliases: ['ceza-rol', 'cezarol', 'muterol']
+    aliases: ['mute-rol', 'cezarol', 'muterol']
     };
     
     exports.help = {
-    name: 'mute-rol',
+    name: 'ceza-rol',
     description: 'ping',
     usage: 'ping',
     };
