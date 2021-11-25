@@ -1,8 +1,8 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
 const db = require('quick.db')
 
-exports.run = async(client, message, args) => {
-  
+exports.run = (client, message, args) => {
+
     if(!message.member.hasPermission("ADMINISTRATOR")){ 
       const yetkiyok = new Discord.MessageEmbed()
       .setAuthor('Kayıt!', message.author.displayAvatarURL())
@@ -11,31 +11,31 @@ exports.run = async(client, message, args) => {
       .setFooter('Sorgulayan: ' + message.author.tag, message.author.displayAvatarURL())
       return message.channel.send(yetkiyok)
   }
-  
-  
- const rol = db.fetch(`kayıtrol_${message.guild.id}`)  
 
-
-    db.delete(`kayıtrol_${message.guild.id}`)
-  
-    message.channel.send(
-      new Discord.MessageEmbed()
+    let rol = message.mentions.roles.first();   
+    if (!rol) return message.channel.send(new Discord.MessageEmbed()
     .setAuthor('Kayıt!', message.author.displayAvatarURL())
-    .setDescription(`Kayıt Rolü silindiği için artık kayıt edemezsiniz.`)
+    .setDescription(`İşlem başarısız! \n \n **Örnek kullanımlar:** \n m!kayıt-rol <@rol>`)
     .setColor('#04F9EC')
     .setFooter('Yetkili: ' + message.author.tag, message.author.displayAvatarURL()));
- 
-};
+    
+    db.set(`kayıtrol_${message.guild.id}`, rol.id)
+    const embed = new Discord.MessageEmbed()
+    .setAuthor('Kayıt!', message.author.displayAvatarURL())
+    .setColor("#04F9EC")
+    .setDescription(`Kayıt rolü ${rol} olarak belirlendi!`)
+    .setFooter('Yetkili: ' + message.author.tag, message.author.displayAvatarURL())
+    message.channel.send(embed)
+}
 
 exports.conf = {
     enabled: true,
-    guildOnly: false,
-    aliases: ['kayıt-rol-kapat', 'kayıt-rol-sil', 'kayıt-rol-sıfırla'],
-    permLevel: 0
-  };
-
-exports.help = {
-    name: 'kayıt-rol-kapat',
-    description: 'Belirlenen kayıt rolünü siler',
-    usage: 'r!kayıt-rol-kapat'
-  };
+    guildd0nly: true,
+    aliases: ["kayit-rol", "kayitrol", "kayıtrol"]
+    };
+    
+    exports.help = {
+    name: 'kayıt-rol',
+    description: 'ping',
+    usage: 'ping',
+    };
