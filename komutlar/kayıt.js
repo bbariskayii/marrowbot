@@ -19,13 +19,13 @@ let rol = message.mentions.roles.first();
   
 if(!kullanici) return message.reply(new Discord.MessageEmbed()
   .setAuthor('Kayıt!', message.author.displayAvatarURL())
-  .setDescription(`İşlem başarısız! \n \n **Örnek kullanımlar:** \n ${ayarlar.prefix}kayıt ${message.author} <isim>`)
+  .setDescription(`İşlem başarısız! \n \n **Örnek kullanımlar:** \n m!kayıt ${message.author} <isim>`)
   .setColor('#04F9EC')
   .setFooter('Yetkili: ' + message.author.tag, message.author.displayAvatarURL()));
   
 if(!isim) return message.reply(new Discord.MessageEmbed()
     .setAuthor('Kayıt!', message.author.displayAvatarURL())
-    .setDescription(`İşlem başarısız! \n \n **Örnek kullanımlar:** \n ${ayarlar.prefix}kayıt ${message.author} <isim>`)
+    .setDescription(`İşlem başarısız! \n \n **Örnek kullanımlar:** \n m!kayıt ${message.author} <isim>`)
     .setColor('#04F9EC')
     .setFooter('Yetkili: ' + message.author.tag, message.author.displayAvatarURL()));
   
@@ -38,7 +38,7 @@ if(isim.length > 32) return message.reply(`Lütfen \`32\` karakteri geçmeyecek 
             const fame = new Discord.MessageEmbed()
             .setAuthor('Kayıt!', message.author.displayAvatarURL())
             .setColor("#04F9EC")
-            .setDescription(`İşlem başarısız! \n Kayıt rolü belirtilmemiş, belirtmek için ${ayarlar.prefix}kayıt-rol <@rol>`)
+            .setDescription(`İşlem başarısız! \n Kayıt rolü belirtilmemiş, belirtmek için m!kayıt-rol <@rol>`)
             .setFooter('Yetkili: ' + message.author.tag, message.author.displayAvatarURL())
 
             return message.channel.send(fame)

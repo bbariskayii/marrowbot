@@ -42,9 +42,8 @@ exports.run = async (client, message, args) => {
 //YARDIM KOMUTU
   
   let embed = new Discord.MessageEmbed()
-  .setAuthor('Yardım Komutları', message.author.displayAvatarURL())
+  .setAuthor('Marrow Komutlar', message.author.displayAvatarURL())
   .setColor('#04F9EC')
-  .setDescription(`Merhaba, \ \n Benimle ilgilendiğini gördüğüme sevindim, o yüzden sana neler \ \n yapabilceğime dair kısa bir giriş yapayım! \ \n\n Müzik komutlarından moderasyon komutlarına, çeşitli oyun \ \n komutlarına ve çok daha \ \n fazlasına kadar kullanılacak birçok komut var! Herhangi bir komutu \n kullanmak için varsayılan \ \n işleri kolaylaştırmak için komutlar birkaç kategoriye ayrılmıştır.`)
   .addField('Komut Kategorileri', `
   m!yardım Moderasyon](https://www.marrow.com.tr/komutlar/moderasyon.php)
   m!yardım Extra](https://www.marrow.com.tr/komutlar/extra.php)
