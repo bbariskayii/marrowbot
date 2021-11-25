@@ -45,11 +45,12 @@ exports.run = async (client, message, args) => {
   .setAuthor('Marrow Komutlar', message.author.displayAvatarURL())
   .setColor('#04F9EC')
   .addField('Komut Kategorileri', `
-  m!yardım Moderasyon](https://www.marrow.com.tr/komutlar/moderasyon.php)
-  m!yardım Extra](https://www.marrow.com.tr/komutlar/extra.php)
-  m!yardım Eğlence](https://www.marrow.com.tr/komutlar/eglence.php)
+  <:komutlar:913538287103258745> [m!komutlar](https://www.marrow.com.tr/komutlar/moderasyon.php) (**60**)
+
+  <:moderasyon:913538287107473428>  [m!mod](https://www.marrow.com.tr/komutlar/extra.php) (**20**)
+  [m!extra](https://www.marrow.com.tr/komutlar/extra.php)
+  [m!yardım Eğlence](https://www.marrow.com.tr/komutlar/eglence.php)
   `)
-  .addField(":traffic_light: Linkler", `[Destek Sunucusu](https://discord.gg/31)`  + "** | **" + `[Oy Ver](https://bit.ly/3980hKq)`  + "** | **" + `[Web Sitesi](https://www.marrow.com.tr/)  `, false)
 
   .setFooter('Sorgulayan: ' + message.author.tag, message.author.displayAvatarURL())
   message.channel.send(embed)
