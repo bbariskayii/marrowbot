@@ -25,7 +25,7 @@ exports.run = async (client, message, args) => {
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['kayıt-mesajı'],
+  aliases: ['kayıt-mesaji'],
   permLevel: 0
 };
  
