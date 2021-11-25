@@ -1,4 +1,6 @@
 dependencies:
+  cpu-gauge: 1.1.0
+  cpu-stat: 2.0.1
   discord-buttons: 4.0.0
   discord.js: 12.5.1
   express: 4.17.1
@@ -7,6 +9,7 @@ dependencies:
   moment-duration-format: 2.3.2
   os: 0.1.1
   quick.db: 7.1.3
+  string-progressbar: 1.0.4
 packages:
   /@discordjs/collection/0.1.6:
     dev: false
@@ -137,6 +140,12 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==
+  /clockit/1.0.1:
+    dev: false
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-Y9rE8CjWqKIXDFs5lnz/V1vA0nw=
   /code-point-at/1.1.0:
     dev: false
     engines:
@@ -183,6 +192,18 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==
+  /cpu-gauge/1.1.0:
+    dependencies:
+      clockit: 1.0.1
+    dev: false
+    engines:
+      node: '>=6.1'
+    resolution:
+      integrity: sha1-6SNYo5qoQmv3+V5a1qZrcJOTI0s=
+  /cpu-stat/2.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-UB6NbdLUTO9dhCk5w40YIsB4/Kw=
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -841,6 +862,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
+  /string-progressbar/1.0.4:
+    dev: false
+    resolution:
+      integrity: sha512-OpkcFxlFjn7kz5jTWmPGY+FFJVN21lQ9k0fkK0XS5GVvlCgS1stgDNEoMyqnkbZEcVP3Gv6IxqgG7tnD7ChBSw==
   /string-width/1.0.2:
     dependencies:
       code-point-at: 1.1.0
@@ -1003,6 +1028,8 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
+  cpu-gauge: ^1.1.0
+  cpu-stat: ^2.0.1
   discord-buttons: ^4.0.0
   discord.js: ^12.5.1
   express: ^4.17.1
@@ -1011,3 +1038,4 @@ specifiers:
   moment-duration-format: ^2.3.2
   os: ^0.1.1
   quick.db: ^7.1.3
+  string-progressbar: ^1.0.4
