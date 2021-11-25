@@ -48,8 +48,8 @@ exports.run = async (client, message, args) => {
   <:komutlar:913538287103258745> [m!komutlar](https://www.marrow.com.tr/komutlar/moderasyon.php) (**60**)
 
   <:moderasyon:913538287107473428>  [m!mod](https://www.marrow.com.tr/komutlar/extra.php) (**20**)
-  [m!extra](https://www.marrow.com.tr/komutlar/extra.php)
-  [m!yardım Eğlence](https://www.marrow.com.tr/komutlar/eglence.php)
+  <:extra:913538287145205810> [m!extra](https://www.marrow.com.tr/komutlar/extra.php)
+  <:eglence:913538287153598494> [m!eglence](https://www.marrow.com.tr/komutlar/eglence.php)
   `)
 
   .setFooter('Sorgulayan: ' + message.author.tag, message.author.displayAvatarURL())
