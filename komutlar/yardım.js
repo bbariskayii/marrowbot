@@ -45,7 +45,7 @@ exports.run = async (client, message, args) => {
     let button1 = new disbut.MessageButton()
     .setStyle('green') 
     .setLabel('Komutlar') 
-    .setID('geridon')
+    .setURL('https://cdn.discordapp.com/emojis/913538287103258745.png?size=44')
 
     let button2 = new disbut.MessageButton()
     .setStyle('blurple') 
