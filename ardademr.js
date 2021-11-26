@@ -107,7 +107,6 @@ client.on('clickButton', (button) => {
   }
 })
 
-
 client.on("ready",(button)=>{
   client.ws.on('INTERACTION_CREATE', async interaction => {
   

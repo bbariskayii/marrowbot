@@ -33,8 +33,8 @@ const db = require('quick.db')
             .setColor('#04F9EC')
             .setFooter('Yetkili: ' + message.author.tag, message.author.displayAvatarURL())
             return message.channel.send(cmfhata)
-        }
-        
+        }        
+
         if(kullanıcı && sebep){
             const cmfmute = new Discord.MessageEmbed()
             .setAuthor("Uyarı!", message.author.displayAvatarURL())
