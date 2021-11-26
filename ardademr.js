@@ -74,11 +74,19 @@ client.on('guildMemberAdd', async member  => {
    
            });
 
-
 //------------------OTOROL
-client.on('guildMemberAdd', member => {
-var role = member.guild.roles.cache.find(role => role.id == kayıtsız)
-member.roles.add(role);
+client.on("guildMemberAdd", member => {
+  let rol = db.fetch(`otorol_${member.guild.id}`);
+  if (!rol) return;
+  let rolbulundu = member.guild.roles.cache.get(rol);
+  if (!rolbulundu)
+    return console.log(`${member.guild.name} Sunucusunda Rolü bulamadım! `);
+
+  member.roles.add(rol);
+    member.user.username +
+      " Hoşgeldin " +
+      rolbulundu.name +
+      " Rolü Başarıyla verildi"
 });
 // ArdaDemr Youtube Kanalına ait KAYIT bot altyapısı
 
