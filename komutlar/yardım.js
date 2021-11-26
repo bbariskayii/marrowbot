@@ -44,7 +44,7 @@ exports.run = async (client, message, args) => {
   
     let button1 = new disbut.MessageButton()
     .setStyle('green') 
-    .setEmoji("⚙️")
+    .setEmoji("<:komutlar:913538287103258745>")
     .setID('123asd')
 
     let button2 = new disbut.MessageButton()
