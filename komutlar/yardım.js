@@ -56,7 +56,7 @@ exports.run = async (client, message, args) => {
         buttons:[
             button7,button8
         ],
-        embed:new discord.MessageEmbed().setColor("#3a73ff").setTitle(`Marrow Komutlar`).setThumbnail(`https://i.hizliresim.com/jc5koek.png`).addField(`<:komutlar:913538287103258745> [m!komutlar](https://www.marrow.com.tr/komutlar/moderasyon.php) (**60**) \n \n <:moderasyon:913538287107473428>  [m!mod](https://www.marrow.com.tr/komutlar/extra.php) (**20**) \n   <:extra:913538287145205810> [m!extra](https://www.marrow.com.tr/komutlar/extra.php) (**16**) \n <:eglence:913538287153598494> [m!eglence](https://www.marrow.com.tr/komutlar/eglence.php) (**24**) `)
+        embed:new discord.MessageEmbed().setColor("#3a73ff").setTitle(`Marrow Komutlar`).setDescription(`https://i.hizliresim.com/jc5koek.png`).addField(`<:komutlar:913538287103258745> [m!komutlar](https://www.marrow.com.tr/komutlar/moderasyon.php) (**60**) \n \n <:moderasyon:913538287107473428>  [m!mod](https://www.marrow.com.tr/komutlar/extra.php) (**20**) \n   <:extra:913538287145205810> [m!extra](https://www.marrow.com.tr/komutlar/extra.php) (**16**) \n <:eglence:913538287153598494> [m!eglence](https://www.marrow.com.tr/komutlar/eglence.php) `)
     });
 
 };
