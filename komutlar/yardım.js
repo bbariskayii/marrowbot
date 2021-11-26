@@ -1,11 +1,11 @@
-const Discord = require('discord.js')
+const discord = require('discord.js');
 const disbut = require('discord-buttons')
 
 exports.run = async (client, message, args) => {
 
 //EXTRA KOMUTU
     if(args[0] === "Extra" || args[0] === "extra") {
-              let Genel = new Discord.MessageEmbed()
+              let Genel = new discord.MessageEmbed()
   .setAuthor('Extra', message.author.displayAvatarURL())
   .setColor('#04F9EC')
   .setDescription(`**m!kullanıcı-bilgi <@Üye>** - İstenen kullanıcı hakkında bilgi verir. \n **m!avatar <@Üye>** -  İstenen üyenin avatarını gösterir. \n **m!davet** - Botu sunucunuza davet eder. \n **m!emojiler** - Sunucudaki emojileri listeler. \n **m!roller** - Sunucudaki rolleri listeler. \n **m!mayın** - Mayın tarlası oyunu. \n **m!karaliste** - Bot sahiplerinin özel komutu.`)
@@ -18,7 +18,7 @@ exports.run = async (client, message, args) => {
 
 //EĞLENCE KOMUTU
   if(args[0] === "Eğlence" || args[0] === "eğlence" || args[0] === "Eglence" || args[0] === "eglence") {
-   let Eğlence = new Discord.MessageEmbed()
+   let Eğlence = new discord.MessageEmbed()
   .setAuthor('Eğlence', message.author.displayAvatarURL())
   .setColor('#04F9EC')
   .setFooter('Sorgulayan: ' + message.author.tag, message.author.displayAvatarURL())
@@ -29,7 +29,7 @@ exports.run = async (client, message, args) => {
   }
   //MODERASYON KOMUTU
   if(args[0] === "Moderasyon" || args[0] === "moderasyon") {
-   let Moderasyon = new Discord.MessageEmbed()
+   let Moderasyon = new discord.MessageEmbed()
   .setAuthor('Moderasyon', message.author.displayAvatarURL())
   .setColor('#04F9EC')
   .setDescription(`**m!ban <@Üye> <Sebep>** - Üyeyi sunucudan yasaklar. \n **m!ban-kaldır <Üye ID> <Sebep>** - İdsi girilen üyenin yasağını kaldırır. \n **m!kick <@Üye> <Sebep>** - Üyeyi sunucudan atar. \n **m!mute <@Üye> <Süre> <Sebep>** - Üyeyi sunucudan susturur. \n **m!unmute <@Üye> <Sebep>** - Üyenin susturulmasını kaldırır. \n **m!sil <sayı>** -  İstenen miktarda mesaj sildirir. \n **m!yavaşmod <sayı>** - Kanala yazı süresi ekler. \n **m!ceza-rol <@Rol>** - Mute rolünü ayarlar. \n **m!rol-al <@Üye> <@Rol>** - İstenen üyenin rolünü alır. \n **m!rol-ver <@Üye> <@Rol>** - İstenen üyeye rol verir. \n **m!linkengel** - Sunucuda link atılmasını engeller. \n **m!otorol <@Rol>** - Yeni üyelere verilecek rol. \n **m!otorol-kapat** - Yeni gelen üyelere rol vermeyi engeller. \n **m!kayıt-rol <@Rol>** - Kayıt rolünü ayarlar. \n **m!kayıt <@Üye> <isim/yaş>** - İsim ve yaşla kayıt edebilirsiniz. \n **m!kayıt-rol-kapat** - Kayıt ederken rol vermesini engeller.`)
@@ -42,24 +42,24 @@ exports.run = async (client, message, args) => {
 
 //YARDIM KOMUTU
   
-  let embed = new Discord.MessageEmbed()
-  .setAuthor('Marrow Komutlar', message.author.displayAvatarURL())
-  .setColor('#04F9EC')
-  .addField('Komut Kategorileri', `
-  <:komutlar:913538287103258745> [m!komutlar](https://www.marrow.com.tr/komutlar/moderasyon.php) (**60**)
+    let button7 = new disbut.MessageButton()
+    .setStyle('blurple') 
+    .setLabel('Erkek') 
+    .setID('ardademrerkek')
 
-  <:moderasyon:913538287107473428>  [m!mod](https://www.marrow.com.tr/komutlar/extra.php) (**20**)
-  <:extra:913538287145205810> [m!extra](https://www.marrow.com.tr/komutlar/extra.php)
-  <:eglence:913538287153598494> [m!eglence](https://www.marrow.com.tr/komutlar/eglence.php)
-  `)
+    let button8 = new disbut.MessageButton()
+    .setStyle('red') 
+    .setLabel('Kız') 
+    .setID('ardademrkız')
 
-  .setFooter('Sorgulayan: ' + message.author.tag, message.author.displayAvatarURL())
-  message.channel.send(embed)
+    message.channel.send(" ", {
+        buttons:[
+            button7,button8
+        ],
+        embed:new discord.MessageEmbed().setColor("#3a73ff").setTitle(`Marrow Komutlar`).setThumbnail(`https://i.hizliresim.com/jc5koek.png`).addField(`<:komutlar:913538287103258745> [m!komutlar](https://www.marrow.com.tr/komutlar/moderasyon.php) (**60**) \n \n <:moderasyon:913538287107473428>  [m!mod](https://www.marrow.com.tr/komutlar/extra.php) (**20**) \n   <:extra:913538287145205810> [m!extra](https://www.marrow.com.tr/komutlar/extra.php) (**16**) \n <:eglence:913538287153598494> [m!eglence](https://www.marrow.com.tr/komutlar/eglence.php) (**24**) `)
+    });
 
-  
-}
-    
-
+};
   exports.conf = {
     aliases: ['help', 'cmds', 'komutlar','y', 'yardim'], //Komutun farklı yazılışlarla kullanımları
     permLevel: 0, //Komutun kimler kullanacağını belirtir (bot.js dosyasından en aşağı inerseniz gerekli yeri görürsünüz)
