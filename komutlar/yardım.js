@@ -42,19 +42,20 @@ exports.run = async (client, message, args) => {
 
 //YARDIM KOMUTU
   
-    let button7 = new disbut.MessageButton()
-    .setStyle('https://cdn.discordapp.com/emojis/913538287103258745.png?size=44') 
+    let button1 = new disbut.MessageButton()
+    .setStyle('url') 
     .setLabel('Komutlar') 
     .setID('geridon')
+    .setURL('https://cdn.discordapp.com/emojis/913538287103258745.png?size=44')
 
-    let button8 = new disbut.MessageButton()
+    let button2 = new disbut.MessageButton()
     .setStyle('blurple') 
     .setLabel('Moderasyon') 
     .setID('geridon2')
 
     message.channel.send(" ", {
         buttons:[
-            button7,button8
+            button1,button2
         ],
         embed:new discord.MessageEmbed().setColor("#3a73ff").setTitle(`Marrow Komutlar`).setDescription(`<:komutlar:913538287103258745> [m!komutlar](https://www.marrow.com.tr/komutlar/moderasyon.php) (**60**) \n \n <:moderasyon:913538287107473428>  [m!mod](https://www.marrow.com.tr/komutlar/extra.php) (**20**) \n   <:extra:913538287145205810> [m!extra](https://www.marrow.com.tr/komutlar/extra.php) (**16**) \n <:eglence:913538287153598494> [m!eglence](https://www.marrow.com.tr/komutlar/eglence.php) `)
     });
