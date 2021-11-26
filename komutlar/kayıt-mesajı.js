@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
     .setID('ardademrerkek')
 
     let button8 = new disbut.MessageButton()
-    .setStyle('red') 
+    .setStyle('blurple') 
     .setLabel('Kız') 
     .setID('ardademrkız')
 

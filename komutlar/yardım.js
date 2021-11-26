@@ -44,13 +44,13 @@ exports.run = async (client, message, args) => {
   
     let button7 = new disbut.MessageButton()
     .setStyle('blurple') 
-    .setLabel('Erkek') 
-    .setID('ardademrerkek')
+    .setLabel('Komutlar') 
+    .setID('geridon')
 
     let button8 = new disbut.MessageButton()
-    .setStyle('red') 
-    .setLabel('Kız') 
-    .setID('ardademrkız')
+    .setStyle('blurple') 
+    .setLabel('Moderasyon') 
+    .setID('geridon2')
 
     message.channel.send(" ", {
         buttons:[
