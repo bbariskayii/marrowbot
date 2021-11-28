@@ -43,8 +43,7 @@ exports.run = async (client, message, args) => {
 //YARDIM KOMUTU
   
     let button1 = new disbut.MessageButton()
-    .setStyle('green') 
-    .setEmoji("<:komutlar:913538287103258745>")
+    .setStyle('green')
     .setID('123asd')
 
     let button2 = new disbut.MessageButton()
