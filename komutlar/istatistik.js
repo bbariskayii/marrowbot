@@ -18,7 +18,7 @@ exports.run = async (client, message, args) => {
     .setAuthor('Marrow bot bilgileri', message.author.displayAvatarURL())
     .setThumbnail("https://cdn.discordapp.com/avatars/905532869743636500/59b79370e370c45d200590d6edb90db9.png?size=80")
     .setColor('#04F9EC')
-    .setFooter('Sorgulayan: ' + message.author.tag, message.author.displayAvatarURL())
+    .setFooter('Görüntüleyen: ' + message.author.tag, message.author.displayAvatarURL())
 .addFields(
         { name: 'Piyasaya Sunuş Tarihi:', value: '01.01.2022 - 03:59:20', inline:true },
         { name: 'Ram Kullanım [%'+ramyuzde+']', value: (process.memoryUsage().heapUsed / 1024 / 512).toFixed(2) + " MB", inline: true },

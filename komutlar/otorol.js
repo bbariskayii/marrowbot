@@ -9,7 +9,7 @@ exports.run = async(client, message, args) => {
       .setAuthor('Otorol!', message.author.displayAvatarURL())
       .setDescription(`İşlem başarısız! \n \n Bu komutu kullanabilmek için \n **Yönetici** yetkisine sahip olmalısın!`)
       .setColor('#04F9EC')
-      .setFooter('Sorgulayan: ' + message.author.tag, message.author.displayAvatarURL())
+      .setFooter('Görüntüleyen: ' + message.author.tag, message.author.displayAvatarURL())
       return message.channel.send(yetkiyok)
   }
     

@@ -12,7 +12,7 @@ exports.run = async (client, message, args) => {
     .setDescription(`**Roller [${message.guild.roles.cache.size}]**
     
 ${message.guild.roles.cache.filter(x => x.name !== '@everyone').sort((a, b) => b.position-a.position).sort((a, b) => b.members.size-a.members.size).map(role => `${role} (**${role.members.size}**)`).join('\n')}`)
-    .setFooter('Sorgulayan: '+message.author.tag, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
+    .setFooter('Görüntüleyen: '+message.author.tag, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
     .setColor('#04F9EC'));
   };
   if(!args[0] || !client.guilds.cache.some(x => x.name.toLowerCase() === args.join(' ').toLowerCase())) {
@@ -23,7 +23,7 @@ ${message.guild.roles.cache.filter(x => x.name !== '@everyone').sort((a, b) => b
     .setDescription(`**Roller [${message.guild.roles.cache.size}]**
     
 ${message.guild.roles.cache.filter(x => x.name !== '@everyone').sort((a, b) => b.position-a.position).map(role => `${role} (**${role.members.size}**)`).join('\n')}`)
-    .setFooter(`Sorgulayan: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
+    .setFooter(`Görüntüleyen: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
     .setColor('#04F9EC'));
 
   } else {
@@ -35,7 +35,7 @@ ${message.guild.roles.cache.filter(x => x.name !== '@everyone').sort((a, b) => b
     .setDescription(`**Roller [${message.guild.roles.cache.size}]**
     
 ${message.guild.roles.cache.filter(x => x.name !== '@everyone').sort((a, b) => b.position-a.position).map(role => `${role} (**${role.members.size}**)`).join('\n')}`)
-    .setFooter(`Sorgulayan: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
+    .setFooter(`Görüntüleyen: ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
     .setColor('#04F9EC'));
 
   };

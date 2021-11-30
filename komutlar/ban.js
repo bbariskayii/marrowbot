@@ -7,7 +7,7 @@ const Discord = require('discord.js')
             .setAuthor('Yasaklama!', message.author.displayAvatarURL())
             .setDescription(`İşlem başarısız! \n \n Bu komutu kullanabilmek için \n **Üyeleri Engelle** yetkisine sahip olmalısın!`)
             .setColor('#04F9EC')
-            .setFooter('Sorgulayan: ' + message.author.tag, message.author.displayAvatarURL())
+            .setFooter('Görüntüleyen: ' + message.author.tag, message.author.displayAvatarURL())
             return message.channel.send(yetkiyok)
         }
 
