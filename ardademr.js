@@ -7,10 +7,9 @@ disbut(client);
 const app = express();
 const db = require('quick.db');
 const fs = require("fs");
-// ArdaDemr Youtube Kanalına ait KAYIT bot altyapısı
 //Uptime için__________________________________________________________________
 app.get("/", (req, res) => {
-  res.send("ArdaDemr Discord Bot Altyapısı");
+  res.send("[M-Shield] Coder: Barış KAYI");
 });
 app.listen(process.env.PORT);
 
@@ -23,28 +22,26 @@ fs.readdir("./komutlar/", (err, files) => {
     if (!file.endsWith(".js")) return;
     let cmd = require(`./komutlar/${file}`);
     let cmdFileName = file.split(".")[0];
-    console.log(`Komut Yükleme Çalışıyor: ${cmdFileName}`);
+    console.log(`[M-Shield] Komut yükleniyor: ${cmdFileName}`);
     client.commands.set(cmd.help.name, cmd);
   });
 });
-// ArdaDemr Youtube Kanalına ait KAYIT bot altyapısı
 //EVENTS Yükleyici_______________________________________________________________
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach((file) => {
     const event = require(`./events/${file}`);
     let eventName = file.split(".")[0];
-    console.log(`Etkinlik Yükleme Çalışıyor: ${eventName}`);
+    console.log(`[M-Shield] Etkinlik kuruluyor: ${eventName}`);
     client.on(eventName, event.bind(null, client));
   });
 });
 
 client.on("ready", () => {
-  console.log(`ArdaDemr Discord Bot Altyapısı BOT AKTİF`);
+  console.log(`[M-Shield] Marrow isimli bot aktif edildi!`);
 });
 
 client.login(process.env.TOKEN);
-// ArdaDemr Youtube Kanalına ait KAYIT bot altyapısı
 
 
 
@@ -88,7 +85,6 @@ client.on("guildMemberAdd", member => {
       rolbulundu.name +
       " Rolü Başarıyla verildi"
 });
-// ArdaDemr Youtube Kanalına ait KAYIT bot altyapısı
 
   
 client.on('clickButton', (button) => {
