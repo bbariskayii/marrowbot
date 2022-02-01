@@ -9,10 +9,9 @@ const db = require('quick.db')
         let sebep = args.slice(1).join(' ')
 
             const cmfmute = new Discord.MessageEmbed()
-            .setAuthor("%{message.author}!", message.author.displayAvatarURL())
-            .setDescription(`Bu komut sayesinde kişinin ses aktifliğini görebilirsin. \n\n Toplam Ses: **.** \n Haftalık Ses: **.** \n Günlük Ses: **.**`)
-            .setColor("#04F9EC")
-            .setFooter('Yetkili: ' + message.author.tag, message.author.displayAvatarURL())
+            .setAuthor("Ses aktifliği: " + message.author.tag, message.author.displayAvatarURL())
+            .setDescription(`Bu komut sayesinde kişinin ses aktifliğini görebilirsin. \n\n Toplam Ses: **1 dakika 7 saniye** \n Haftalık Ses: **1 dakika 2 saniye** \n Günlük Ses: **5 saniye** \n \n Durum: **KÖTÜ**`)
+            .setFooter('Görüntüleyen: ' + message.author.tag, message.author.displayAvatarURL())
             message.channel.send(cmfmute)
 
         }
