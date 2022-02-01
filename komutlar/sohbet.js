@@ -24,5 +24,5 @@ exports.conf = {
 }
 
 exports.help = {
-    name: 'voice'
+    name: 'voice1'
 }
