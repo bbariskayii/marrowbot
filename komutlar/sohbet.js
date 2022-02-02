@@ -10,7 +10,7 @@ const db = require('quick.db')
 
             const cmfmute = new Discord.MessageEmbed()
             .setAuthor("Sohbet!", message.author.displayAvatarURL())
-            .setDescription(`\n Toplam Ses: **1 dakika 7 saniye** \n Haftalık Ses: **1 dakika 2 saniye** \n Günlük Ses: **5 saniye** \n \n Durum: **KÖTÜ**`)
+            .setDescription(`\n So \n Haftalık Ses: **1 dakika 2 saniye** \n Günlük Ses: **5 saniye** \n \n Durum: **KÖTÜ**`)
             .setFooter('Görüntüleyen: ' + message.author.tag, message.author.displayAvatarURL())
             message.channel.send(cmfmute)
 
@@ -24,5 +24,5 @@ exports.conf = {
 }
 
 exports.help = {
-    name: 'voice1'
+    name: 'sohbet'
 }
