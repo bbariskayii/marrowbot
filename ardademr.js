@@ -9,7 +9,7 @@ const db = require('quick.db');
 const fs = require("fs");
 //Uptime için__________________________________________________________________
 app.get("/", (req, res) => {
-  res.send("[M-Shield] Coder: Barış KAYI");
+  res.send("Marrow bot by owner Barış KAYI");
 });
 app.listen(process.env.PORT);
 
