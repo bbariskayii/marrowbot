@@ -30,17 +30,17 @@ exports.run = async (client, message, args) => {
   		  { name: '\u200b', value: '\u200b', inline: true }
     )
 .addFields(
-        { name: 'Bot Sâhibi:', value: "[BlackSworde#4033](https://www.discord.com/users/736168523050516601)", inline:true },
-        { name: 'Kütüphane:', value: "JavaScripts", inline:true },
+        { name: 'Bot Sâhibi:', value: "[HzGeanus#5250](https://www.discord.com/users/736168523050516601)", inline:true },
+        { name: 'Kütüphane:', value: "JS, NodeJs", inline:true },
     		{ name: '\u200b', value: '\u200b', inline: true }
     )
 .addFields(
-        { name: 'Sunucu Sayısı:', value: "30.107", inline:true },
+        { name: 'Sunucu Sayısı:', value: "1", inline:true },
         { name: 'Gecikme:', value: client.ws.ping + "ms", inline:true },
     		{ name: '\u200b', value: '\u200b', inline: true }
     )
     .addField("Ram Bar Göstergesi:", bar)
-    .addField("Marrow'un Hizmet Ettiği Kullanıcılar [2.223.114]", "<:cevrimici:908771274363404319> 54.246 <:bosta:908771274392748044> 100.301 <:mesgul:908771274292084746> 390.345 <:cevrimdisi:908771274300473344> 1.483.126")
+    .addField("Marrow'un Hizmet Ettiği Kullanıcılar [None]", "<:cevrimici:908771274363404319> Number <:bosta:908771274392748044> Number <:mesgul:908771274292084746> Number <:cevrimdisi:908771274300473344> Number")
   return message.channel.send(istatistikler);
 };
 
