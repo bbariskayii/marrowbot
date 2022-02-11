@@ -10,10 +10,6 @@ const embed2 = new Discord.MessageEmbed()
     .setDescription(`İşlem başarısız! \n \n **Örnek kullanımlar:** \n m!karaliste ekle <Üye ID> <Sebep> \n m!karaliste çıkar <Üye ID>`)
     .setColor('#04F9EC')
 
-const embed3 = new Discord.MessageEmbed()
-.setTitle('Bir kişiyi etiketlemelisin veya id sini yazmalısın.')
-.setColor('BLUE')
-
 exports.run = async(client, message, args) => {  
 
         let sebep = args.slice(2).join(' ');
@@ -30,7 +26,7 @@ let user = message.mentions.users.first() || client.users.cache.get(args.slice(1
 if(!args[0]) return message.channel.send(embed2)
 switch(args[0]) {
   case "ekle":
-    if (!user) return message.channel.send(embed3)
+    if (!user) return message.channel.send(embed2)
 
    
     db.set(`karaliste.${user.id}`, true)
@@ -43,7 +39,7 @@ const embed4 = new Discord.MessageEmbed()
     message.channel.send(embed4)
     break;
   case "çıkar":
-    if (!user) return message.channel.send(embed3)
+    if (!user) return message.channel.send(embed2)
     db.delete(`karaliste.${user.id}`)
     const embed5 = new Discord.MessageEmbed()
 .setAuthor('Karaliste!', message.author.displayAvatarURL())
@@ -53,7 +49,7 @@ const embed4 = new Discord.MessageEmbed()
     message.channel.send(embed5)
     break;
   case "bilgi":
-    if (!user) return message.channel.send(embed3)
+    if (!user) return message.channel.send(embed2)
 let i = db.fetch(`karaliste.${user.id}`)
 
 const embed6 = new Discord.MessageEmbed()
