@@ -2,11 +2,11 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const express = require("express");
 const moment = require("moment");
-const disbut = require('discord-buttons')
+const disbut = require('discord-buttons');
+const db = require('quick.db');
+const fs = require('fs');
 disbut(client);
 const app = express();
-const db = require('quick.db');
-const fs = require("fs");
 //Uptime için__________________________________________________________________
 app.get("/", (req, res) => {
   res.send("Marrow bot by owner Barış KAYI");
@@ -132,3 +132,214 @@ client.on("ready",(button)=>{
    };
     });
   });
+
+client.elevation = message => {
+  if (!message.guild) {
+    return;
+  }
+  let permlvl = 0;
+  if (message.member.hasPermission("BAN_MEMBERS")) permlvl = 2;
+  if (message.member.hasPermission("ADMINISTRATOR")) permlvl = 3;
+  if (ayarlar.sahip.includes(message.author.id)) permlvl = 4;
+  return permlvl;
+};
+
+client.login(ayarlar.token);
+
+client.on("message", async message => {
+  const lus = await db.fetch(`reklam_${message.guild.id}`);
+  if (lus) {
+    const reklamengel = [
+      ".org",
+      ".com",
+      ".net",
+      "http:",
+      "https:",
+      "https",
+      "http",
+      "www.",
+      "www"
+    ];
+    if (
+      reklamengel.some(word => message.content.toLowerCase().includes(word))
+    ) {
+      try {
+        if (!message.member.permissions.has("KICK_MEMBERS")) {
+          message.delete();
+
+          const embed = new Discord.MessageEmbed()
+            .setAuthor("Uyarı!", client.user.avatarURL())
+            .setDescription(`<@${message.author.id}> kullanıcısı **Reklam** sebebiyle uyarıldı.`)
+            .setColor("#04F9EC")
+            message.channel.send(embed)
+            .then(message => message.delete(3000));
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  }
+  if (!lus) return;
+});
+client.on("messageUpdate", async message => {
+  const lus = await db.fetch(`reklam_${message.guild.id}`);
+  if (lus) {
+    const reklamengel = [
+      ".org",
+      ".com",
+      ".net",
+      "http:",
+      "https:",
+      "https",
+      "http",
+      "www.",
+      "www"
+    ];
+    if (
+      reklamengel.some(word => message.content.toLowerCase().includes(word))
+    ) {
+      try {
+        if (!message.member.permissions.has("KICK_MEMBERS")) {
+          message.delete();
+
+          const embed = new Discord.MessageEmbed()
+            .setAuthor("Uyarı!", client.user.avatarURL())
+            .setDescription(`<@${message.author.id}> kullanıcısı **Reklam** sebebiyle uyarıldı.`)
+            .setColor("#04F9EC")
+            message.channel.send(embed)
+            .then(message => message.delete(3000));
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  }
+  if (!lus) return;
+});
+
+client.on('message', message => {
+if(message.content.startsWith(ayarlar.prefix)) {
+const args = message.content.slice(ayarlar.prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
+if (message.content.toLowerCase().startsWith(ayarlar.prefix + `emoji-ekle`)){
+if(!args[0]) return message.channel.send(new Discord.MessageEmbed()
+      .setAuthor('Emoji Ekleme!', message.author.displayAvatarURL())
+      .setDescription(`İşlem başarısız! \n \n **Örnek kullanımlar:** \n m!emoji-ekle <EmojiIsmi> <URL>`)
+      .setColor('#04F9EC')
+      .setFooter('Yetkili: ' + message.author.tag, message.author.displayAvatarURL()));
+if(!args[1]) return message.channel.send(new Discord.MessageEmbed()
+      .setAuthor('Emoji Ekleme!', message.author.displayAvatarURL())
+      .setDescription(`İşlem başarısız! \n \n **Örnek kullanımlar:** \n m!emoji-ekle <EmojiIsmi> <URL>`)
+      .setColor('#04F9EC')
+      .setFooter('Yetkili: ' + message.author.tag, message.author.displayAvatarURL()));
+message.guild.emojis.create(args[1], args[0])
+  .then(emoji => message.channel.send(`${emoji.name} isimli emoji oluşturuldu!`))
+  .catch(err => {
+  message.channel.send("Bir hata oluştu.\nHata: "+err)
+  .catch(msgerr => {
+  message.channel.send("Bir hata oluştu.\nHatayı yazdırırken hata oluştuğu için hatayı yazdırmadım ancak konsola gönderildi daha sonra tekrar deneyin!")    
+  })
+  console.error;
+});
+}  
+}
+});
+
+client.on('message', message => {
+if(message.content.startsWith(ayarlar.prefix)) {
+const args = message.content.slice(ayarlar.prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
+if (message.content.toLowerCase().startsWith(ayarlar.prefix + `emoji-sil`)){
+if(!args[0]) return message.channel.send(new Discord.MessageEmbed()
+      .setAuthor('Emoji!', message.author.displayAvatarURL())
+      .setDescription(`İşlem başarısız! \n \n **Örnek kullanımlar:** \n m!emoji-sil <EmojiIsmi>`)
+      .setColor('#04F9EC')
+      .setFooter('Yetkili: ' + message.author.tag, message.author.displayAvatarURL()));
+message.guild.emojis.create(args[1], args[0])
+  .then(emoji => message.channel.send(`${emoji.name} isimli emoji silindi.`))
+  .catch(err => {
+  message.channel.send("Bir hata oluştu.\nHata: "+err)
+  .catch(msgerr => {
+  message.channel.send("Bir hata oluştu.\nHatayı yazdırırken hata oluştuğu için hatayı yazdırmadım ancak konsola gönderildi daha sonra tekrar deneyin!")    
+  })
+  console.error;
+});
+}  
+}
+});
+
+client.login(ayarlar.token)
+
+client.on("guildMemberAdd", member => {
+  let rol = db.fetch(`otorol_${member.guild.id}`);
+  if (!rol) return;
+  let rolbulundu = member.guild.roles.cache.get(rol);
+  if (!rolbulundu)
+    return console.log(`${member.guild.name} Sunucusunda Rolü bulamadım! `);
+
+  member.roles.add(rol);
+    member.user.username +
+      " Hoşgeldin " +
+      rolbulundu.name +
+      " Rolü Başarıyla verildi"
+});
+
+client.on('message', message => {
+if(message.content.startsWith(ayarlar.prefix)) {
+const args = message.content.slice(ayarlar.prefix.length).trim().split(/ +/g);
+const command = args.shift().toLowerCase();
+if (message.content.toLowerCase().startsWith(ayarlar.prefix + `emoji-sil`)){
+if(!args[0]) return message.channel.send(new Discord.MessageEmbed()
+      .setAuthor('Emoji Ekleme!', message.author.displayAvatarURL())
+      .setDescription(`İşlem başarısız! \n \n **Örnek kullanımlar:** \n m!emoji-sil <EmojiIsmi>`)
+      .setColor('#04F9EC')
+      .setFooter('Yetkili: ' + message.author.tag, message.author.displayAvatarURL()));
+message.emojis.delete(args[0])
+  .then(emoji => message.channel.send(`${emoji.name} isimli emoji oluşturuldu!`))
+  .catch(err => {
+  message.channel.send("Bir hata oluştu.\nHata: "+err)
+  .catch(msgerr => {
+  message.channel.send("Bir hata oluştu.\nHatayı yazdırırken hata oluştuğu için hatayı yazdırmadım ancak konsola gönderildi daha sonra tekrar deneyin!")    
+  })
+  console.error;
+});
+}  
+}
+});
+
+
+client.on('message', message => {
+  // Data
+  let sistem = db.fetch(`cmfsaas_${message.guild.id}`)
+  
+  // Sa
+  var sa = ["Sa","SA","sa","Sea","sea","SEA"]
+
+  if(sistem === 'aktif'){
+    if(sa.includes(message.content.toLowerCase())){
+      message.channel.send(`o neymiş, doğrusu: Selamün Aleyküm`)
+    }
+  } else {
+    // Sistem Kapalıysa Bot İplemesin.
+    return;
+  }
+})
+
+client.on('message', message => {
+  // Data
+  let sistem = db.fetch(`cmfsaas_${message.guild.id}`)
+  
+  // as
+  var sa = ["Selamün Aleyküm","selamün aleyküm","selamın aleykum","Selamın aleykum","Selamın aleyküm", "Selam", "selam"]
+
+  if(sistem === 'aktif'){
+    if(sa.includes(message.content.toLowerCase())){
+      message.channel.send(`Aleyküm selam`)
+    }
+  } else {
+    // Sistem Kapalıysa Bot İplemesin.
+    return;
+  }
+})
+
+client.login(process.env.TOKEN)
