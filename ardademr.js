@@ -85,7 +85,7 @@ client.on("guildMemberAdd", member => {
       " Hoşgeldin " +
       rolbulundu.name +
       " Rolü Başarıyla verildi"
-});
+})
 
   
 client.on('clickButton', (button) => {
