@@ -47,7 +47,7 @@ if(isim.length > 32) return message.reply(`Lütfen \`32\` karakteri geçmeyecek 
 message.guild.members.cache.get(kullanici.id).setNickname(`${isim}`)
 message.channel.send(new Discord.MessageEmbed()
   .setAuthor('Kayıt!', message.author.displayAvatarURL())
-  .setDescription(`${kullanici} yetkili ${message.author} tarafından kayıt edildi. \n Aramıza hoşgeldin **${isim}** \n \n Senle birlikte artık **3** kişiyiz!`)
+  .setDescription(`${kullanici} yetkili ${message.author} tarafından kayıt edildi. \n Aramıza hoşgeldin **${isim}** \n \n Senle birlikte artık **None** kişiyiz!`)
   .setColor('#04F9EC')
   .setFooter('Kayıt Eden: ' + message.author.tag, message.author.displayAvatarURL()));
   message.guild.member(kullanici).roles.add(kayıtrol)
