@@ -1,5 +1,5 @@
-# Bu Altyapı HzMaslak | Barış KAYI
+# Bu Altyapı izinsiz paylaşılamaz, yayımlanamaz.
 
-# KODLAYAN: HzMaslak ALTYAPI: ARDADEMR
 
-# DİSCORD: HzMaslak#7285
+
+# DİSCORD: BarışKyra#5250
